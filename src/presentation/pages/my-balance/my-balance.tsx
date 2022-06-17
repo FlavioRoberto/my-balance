@@ -1,4 +1,4 @@
-import getSpend from "@/domain/services/spend.service";
+import getSpend from "@/domain/services/balance.service";
 import { Card, Graph, Header } from "@/presentation/components";
 import React from "react";
 import "./my-balance.scss";
@@ -6,27 +6,27 @@ import "./my-balance.scss";
 const MyBalacne = () => {
     const data = getSpend();
     return <div className="my-balance">
-        <div className="container">
-            <Header />
+        <section className="container">
+            <Header myBalance={data.myBalance} />
             <Card >
                 <h2 className="title">Spending - Last 7 day</h2>
 
-                <Graph data={data} />
+                <Graph data={data.spending} />
 
                 <hr />
 
                 <div className="row space-between center">
                     <div className="column">
                         <span className="label">Total this month</span>
-                        <span className="title">$478.33</span>
+                        <span className="title">${data.totalThisMonth}</span>
                     </div>
                     <div className="column">
-                        <span className="results">+2.4%</span>
+                        <span className="results">+{data.pecentualFromLastMonth}%</span>
                         <span className="label">from last month</span>
                     </div>
                 </div>
             </Card>
-        </div>
+        </section>
     </div>
 }
 
