@@ -1,1 +1,1 @@
-export { default as MyBalance } from './my-balance'
+export { default as MyBalance } from './my-balance/my-balance'

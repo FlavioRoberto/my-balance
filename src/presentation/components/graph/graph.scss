@@ -1,0 +1,15 @@
+.graph-column {
+    content: "";
+    max-height: 100%;
+    align-self: flex-end;
+    background-color: red;
+    justify-self: end;
+    display: block;
+    border: 5px solid transparent;
+    width: 2em;
+    border-radius: .25em;
+}
+
+.graph-column-description {
+    align-self: center;
+}

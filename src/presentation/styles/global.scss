@@ -11,3 +11,33 @@
 body {
     background-color: $background;
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.align-center{
+    justify-content: center;
+}
+
+.center {
+    align-items: center;
+}
+
+.end{
+    justify-content: end;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.gap{
+    gap: .75em;
+}
