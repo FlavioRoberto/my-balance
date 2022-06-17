@@ -1,25 +1,11 @@
-import { Spend } from "@/domain";
+import getSpend from "@/domain/services/spend.service";
 import { Card, Graph, Header } from "@/presentation/components";
 import React from "react";
 import "./my-balance.scss";
 
-const data: Spend[] = [
-    {
-        description: "mon",
-        value: 10
-    },
-    {
-        description: "tue",
-        value: 50
-    },
-    {
-        description: "web",
-        value: 30
-    }
-]
-
-const MyBalacne = () =>
-    <div className="my-balance">
+const MyBalacne = () => {
+    const data = getSpend();
+    return <div className="my-balance">
         <div className="container">
             <Header />
             <Card >
@@ -28,6 +14,7 @@ const MyBalacne = () =>
                 <Graph data={data} />
 
                 <hr />
+
                 <div className="row space-between center">
                     <div className="column">
                         <span className="label">Total this month</span>
@@ -41,5 +28,6 @@ const MyBalacne = () =>
             </Card>
         </div>
     </div>
+}
 
 export default MyBalacne;

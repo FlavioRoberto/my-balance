@@ -1,31 +1,25 @@
+import { getPercent, getMaxValue } from "@/domain";
 import React from "react";
 import './graph.scss';
 
-function getMaxValue(data) {
-    let maxValue = 0;
+function getColumnStyle(value, maxValue): React.CSSProperties {
+    const style = { height: `${getPercent(value, maxValue)}%` } as React.CSSProperties;
 
-    data.forEach(element => {
-        if (element.value > maxValue)
-            maxValue = element.value;
-    });
+    if (value === maxValue)
+        style.backgroundColor = "#B5DFE5";
 
-    return maxValue;
-}
-
-function getPercent(maxValue, value): number {
-    return (value * 100) / maxValue;
+    return style;
 }
 
 const Graph = props => {
     const { data } = props;
-    const maxValue = getMaxValue(data);
+    const maxValue = getMaxValue(data.map(item => item.value));
 
-    return <div className="row align-center gap" style={{ height: "100px" }}>
-
+    return <div className="row align-center gap margin-1" style={{ height: "100px" }}>
         {data.map((spend, i) =>
             <div key={i} className="column end">
                 <span>{spend.value}</span>
-                <div className="graph-column" style={{ height: `${getPercent(maxValue, spend.value)}%` }}></div>
+                <div className="graph-column" style={getColumnStyle(maxValue, spend.value)}></div>
                 <span className="graph-column-description">{spend.description}</span>
             </div>
         )}

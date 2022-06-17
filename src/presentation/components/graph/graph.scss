@@ -2,7 +2,7 @@
     content: "";
     max-height: 100%;
     align-self: flex-end;
-    background-color: red;
+    background-color: #EC755D;
     justify-self: end;
     display: block;
     border: 5px solid transparent;
@@ -12,4 +12,6 @@
 
 .graph-column-description {
     align-self: center;
+    color: #b4b4b4;
+    font-size: .75em;
 }
