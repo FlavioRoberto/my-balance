@@ -1,0 +1,26 @@
+@import "../../styles/colors.scss";
+
+header{
+    background-color: $primary;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: .25em;
+    color: $white;
+    padding: 1em;
+
+    span{
+        display: block;
+    }
+
+    .value{
+        font-size: 1.5em;
+        margin-top: .25em;
+    }
+
+    img{
+        max-width: 4em;
+        height: auto;
+        align-self: center;
+    }
+}
