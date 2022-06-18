@@ -14,7 +14,7 @@ function getColumnStyle(value, maxValue): React.CSSProperties {
 
 const Graph = props => {
     const { data } = props;
-    const maxValue = getMaxValue(data.map(item => item.value.toFixed(2)));
+    const maxValue = getMaxValue(data.map(item => item.value));
     let [showBadge, setShowBadge] = useState([]);
 
     const onSetShowBadge = (enable, i) => {
