@@ -1,5 +1,6 @@
 import { getPercent, getMaxValue } from "@/domain";
-import React from "react";
+import React, { useState } from "react";
+import { Badge } from "@/presentation/components";
 import './graph.scss';
 
 function getColumnStyle(value, maxValue): React.CSSProperties {
@@ -13,12 +14,20 @@ function getColumnStyle(value, maxValue): React.CSSProperties {
 
 const Graph = props => {
     const { data } = props;
-    const maxValue = getMaxValue(data.map(item => item.value));
+    const maxValue = getMaxValue(data.map(item => item.value.toFixed(2)));
+    let [showBadge, setShowBadge] = useState([]);
+
+    const onSetShowBadge = (enable, i) => {
+        let show = [];
+        show.concat(show);
+        show[i] = enable;
+        setShowBadge(show)
+    }
 
     return <div className="row align-center gap margin-1" style={{ height: "100px" }}>
         {data.map((spend, i) =>
-            <div key={i} className="column end">
-                <span>{spend.value}</span>
+            <div key={i} className="column end" onMouseEnter={() => onSetShowBadge(true, i)} onMouseLeave={() => onSetShowBadge(false, i)}>
+                {showBadge[i] && <Badge description={spend.value.toFixed(2)} />}
                 <div className="graph-column" style={getColumnStyle(maxValue, spend.value)}></div>
                 <span className="graph-column-description">{spend.description}</span>
             </div>

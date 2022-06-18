@@ -8,6 +8,10 @@
     border: 5px solid transparent;
     width: 2em;
     border-radius: .25em;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .graph-column-description {

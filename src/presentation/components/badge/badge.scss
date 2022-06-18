@@ -1,0 +1,22 @@
+.badge {
+    display: flex;
+    max-width: 100px;
+    justify-content: center;
+    position: relative;
+
+    .content {
+        position: absolute;
+        margin-bottom: 1em;
+        top: -3vh;
+        background-color: #37271B;
+        color: white;
+        padding: .25em;
+        border-radius: .25em;
+        width: 50px;
+        text-align: center;
+
+        &::before {
+            content: '$';
+        }
+    }
+}
