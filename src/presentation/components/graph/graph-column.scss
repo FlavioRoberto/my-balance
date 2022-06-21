@@ -1,0 +1,27 @@
+.graph-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    .column {
+        content: "";
+        max-height: 100%;
+        align-self: flex-end;
+        background-color: #EC755D;
+        justify-self: end;
+        display: block;
+        border: 5px solid transparent;
+        width: 2em;
+        border-radius: .25em;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .description {
+        align-self: center;
+        color: #b4b4b4;
+        font-size: .75em;
+    }
+}
