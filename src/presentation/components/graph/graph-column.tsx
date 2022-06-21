@@ -26,11 +26,7 @@ const GraphColumn: React.FC<Props> = (props: Props) => {
     const [showBadge, setShowBadge] = useState(false);
     const isPrincipalColumn = props.spendValue === props.maxValue;
 
-    const onSetShowBadge = (enable: boolean) => {
-        setShowBadge(enable)
-    }
-
-    return <div className="graph-column" onMouseEnter={() => onSetShowBadge(true)} onMouseLeave={() => onSetShowBadge(false)}>
+    return <div className="graph-column" onMouseEnter={() => setShowBadge(true)} onMouseLeave={() => setShowBadge(false)}>
         {showBadge && <Badge description={props.spendValue.toFixed(2)} />}
         <div className={getColumnClass(isPrincipalColumn)} style={getColumnStyle(props.maxValue, props.spendValue)}></div>
         <span className="description">{props.description}</span>
