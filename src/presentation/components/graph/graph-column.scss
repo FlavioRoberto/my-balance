@@ -19,11 +19,15 @@
         &:hover {
             cursor: pointer;
         }
+
+        &.principal {
+            background-color: $secondary;
+        }
     }
 
     .description {
         align-self: center;
-        color: $secondary;
+        color: $label;
         font-size: .75em;
     }
 }
