@@ -7,15 +7,15 @@ import "./my-balance.scss";
 const MyBalacne = () => {
     const [spend, setSpend] = useState<Balance>();
 
-    const getSpendAsync = async () => {
-        setSpend(await getSpend());
-    }
-
     useEffect(() => {
+        const fetchSpend = async () => {
+            setSpend(await getSpend());
+        }
+
         if (!spend)
-            getSpendAsync()
+            fetchSpend()
     });
-   
+
     return <>{spend && <div className="my-balance">
         <section className="container">
             <Header myBalance={spend.myBalance} />
