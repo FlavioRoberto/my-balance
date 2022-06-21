@@ -1,3 +1,5 @@
+@import "../../styles/colors.scss";
+
 .graph-column {
     display: flex;
     flex-direction: column;
@@ -7,7 +9,7 @@
         content: "";
         max-height: 100%;
         align-self: flex-end;
-        background-color: #EC755D;
+        background-color: $primary;
         justify-self: end;
         display: block;
         border: 5px solid transparent;
@@ -21,7 +23,7 @@
 
     .description {
         align-self: center;
-        color: #b4b4b4;
+        color: $secondary;
         font-size: .75em;
     }
 }
