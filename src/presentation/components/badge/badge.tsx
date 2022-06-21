@@ -1,7 +1,11 @@
 import React from "react";
 import './badge.scss';
 
-const Badge = props => {
+interface Props {
+    description: string
+}
+
+const Badge: React.FC<Props> = (props: Props) => {
     const { description } = props;
     return <div className="badge"><span className="content">{description}</span></div>
 }

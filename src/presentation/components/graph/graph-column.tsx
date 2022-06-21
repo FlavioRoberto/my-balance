@@ -33,5 +33,4 @@ const GraphColumn: React.FC<Props> = (props: Props) => {
     </div>
 }
 
-
 export default GraphColumn;

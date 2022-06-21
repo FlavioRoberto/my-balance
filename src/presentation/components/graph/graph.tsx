@@ -1,8 +1,12 @@
-import { getMaxValue } from "@/domain";
+import { getMaxValue, Spend } from "@/domain";
 import React from "react";
 import GraphColumn from "./graph-column";
 
-const Graph = props => {
+interface Props {
+    data: Spend[]
+}
+
+const Graph: React.FC<Props> = (props: Props) => {
     const { data } = props;
     const maxValue = getMaxValue(data.map(item => item.value));
 
