@@ -10,7 +10,7 @@ const Graph: React.FC<Props> = (props: Props) => {
     const { data } = props;
     const maxValue = getMaxValue(data.map(item => item.value));
 
-    return <div className="row align-center gap margin-1" style={{ height: "100px" }}>
+    return <div className="row align-center gap margin-1" style={{ height: "20vh" }}>
         {data.map((spend, i) =>
             <GraphColumn key={i} spendValue={spend.value} maxValue={maxValue} description={spend.description} />
         )}
