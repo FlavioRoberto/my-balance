@@ -10,7 +10,7 @@ interface Props {
 }
 
 function getColumnStyle(value, maxValue): React.CSSProperties {
-    return { height: `${getPercent(value, maxValue)}%` } as React.CSSProperties;
+    return { height: `${Math.round(getPercent(value, maxValue))}%` } as React.CSSProperties;
 }
 
 function getColumnClass(principalColumn: boolean): string | undefined {
