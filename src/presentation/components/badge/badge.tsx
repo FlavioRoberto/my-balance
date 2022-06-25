@@ -2,12 +2,13 @@ import React from "react";
 import './badge.scss';
 
 interface Props {
-    description: string
+    description: string,
+    show: boolean
 }
 
 const Badge: React.FC<Props> = (props: Props) => {
     const { description } = props;
-    return <div className="badge"><span className="content">{description}</span></div>
+    return props.show && <div className="badge"><span className="content">{description}</span></div>
 }
 
 export default Badge;
